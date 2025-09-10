@@ -2,6 +2,6 @@
 
 * [Introduction](README.md)
 
-## Graph Algorithms
+## Graph
 
-* [Depth First Search](graph-algorithms/depth-first-search.md)
+* [Breadth First Search](graph/breadth-first-search.md)
