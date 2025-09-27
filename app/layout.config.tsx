@@ -11,7 +11,7 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
       <>
-        CP Templates
+        CP Library
       </>
     ),
   },
