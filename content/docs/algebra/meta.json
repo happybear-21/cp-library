@@ -1,6 +1,7 @@
 {
     "pages": [
         "fundamentals",
-        "prime-numbers"
+        "prime-numbers",
+        "number-theoretic-functions"
     ]
 }
