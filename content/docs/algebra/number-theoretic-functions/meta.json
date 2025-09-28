@@ -1,6 +1,7 @@
 {
     "title": "Number Theoretic Functions",
     "pages": [
-        "eulers-totient-function"
+        "eulers-totient-function",
+        "divisors"
     ]
 }
