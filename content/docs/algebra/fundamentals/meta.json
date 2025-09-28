@@ -1,0 +1,9 @@
+{
+    "pages": [
+        "binary-exponentiation",
+        "euclidean-algorithm",
+        "extended-euclidean-algorithm",
+        "linear-diophantine-equation",
+        "fibonacci-numbers"
+    ]
+}
