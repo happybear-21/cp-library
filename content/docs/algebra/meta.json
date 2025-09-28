@@ -1,7 +1,9 @@
 {
+    "title": "Algebra",
     "pages": [
         "fundamentals",
         "prime-numbers",
-        "number-theoretic-functions"
+        "number-theoretic-functions",
+        "modular-arithmetic"
     ]
 }
