@@ -70,13 +70,13 @@ To decode a code word, first remove the final  $1$ . Then, if the  $i$ -
 ## Formulas for the  $n^{\text{th}}$  Fibonacci number
 
 #### Closed-form expression
-There is a formula known as "Binet's formula", even though it was already known by Moivre: 
+There is a formula known as "Binet's formula", even though it was already known by Moivre:
 ```math
 F_n = \frac{\left(\frac{1 + \sqrt{5}}{2}\right)^n - \left(\frac{1 - \sqrt{5}}{2}\right)^n}{\sqrt{5}}
 ```
 This formula is easy to prove by induction, but it can be deduced with the help of the concept of generating functions or by solving a functional equation.
 
-You can immediately notice that the second term's absolute value is always less than  $1$ , and it also decreases very rapidly (exponentially). Hence the value of the first term alone is "almost"  $F_n$ . This can be written strictly as: 
+You can immediately notice that the second term's absolute value is always less than  $1$ , and it also decreases very rapidly (exponentially). Hence the value of the first term alone is "almost"  $F_n$ . This can be written strictly as:
 ```math
 F_n = \left[\frac{\left(\frac{1 + \sqrt{5}}{2}\right)^n}{\sqrt{5}}\right]
 ```
@@ -107,12 +107,12 @@ In this way, we obtain a linear solution,  $O(n)$  time, saving all the valu
 #### Matrix Form
 
 To go from  $(F_n, F_{n-1})$  to  $(F_{n+1}, F_n)$ , we can express the linear recurrence as a 2x2 matrix multiplication:
- 
+
 ```math
 \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} F_n \\ F_{n-1} \end{pmatrix} = \begin{pmatrix} F_n + F_{n-1} \\ F_{n} \end{pmatrix} = \begin{pmatrix} F_{n+1} \\ F_{n} \end{pmatrix}
 ```
 
-This lets us treat iterating the recurrence as repeated matrix multiplication, which has nice properties. In particular, 
+This lets us treat iterating the recurrence as repeated matrix multiplication, which has nice properties. In particular,
 ```math
 \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}^n \begin{pmatrix} F_1 \\ F_0 \end{pmatrix} = \begin{pmatrix} F_{n+1} \\ F_{n} \end{pmatrix}
 ```
@@ -170,7 +170,7 @@ long long fib(int n) {
 ```
 
 #### Fast Doubling Method
-By expanding the above matrix expression for  $n = 2\cdot k$  
+By expanding the above matrix expression for  $n = 2\cdot k$ 
 
 ```math
 \begin{pmatrix} F_{2k+1} & F_{2k}\\ F_{2k} & F_{2k-1} \end{pmatrix} = \begin{pmatrix} 1 & 1\\ 1 & 0 \end{pmatrix}^{2k} = \begin{pmatrix} F_{k+1} & F_{k}\\ F_{k} & F_{k-1} \end{pmatrix} ^2
@@ -180,7 +180,7 @@ we can find these simpler equations:
 
 ```math
 \begin{align}
-F_{2k+1} &= F_{k+1}^2 + F_{k}^2 \\ 
+F_{2k+1} &= F_{k+1}^2 + F_{k}^2 \\
 F_{2k} &= F_k(F_{k+1}+F_{k-1}) = F_k (2F_{k+1} - F_{k})\\
 \end{align}.
 ```

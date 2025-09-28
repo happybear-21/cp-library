@@ -13,7 +13,7 @@ Most obviously this applies to modular multiplication, to multiplication of matr
 
 ## Algorithm
 
-Raising $a$ to the power of $n$ is expressed naively as multiplication by $a$ done $n - 1$ times:  
+Raising $a$ to the power of $n$ is expressed naively as multiplication by $a$ done $n - 1$ times:
 $a^{n} = a \cdot a \cdot \ldots \cdot a$. However, this approach is not practical for large $a$ or $n$.
 
 $a^{b+c} = a^b \cdot a^c$ and $a^{2b} = a^b \cdot a^b = (a^b)^2$.
@@ -164,7 +164,7 @@ that, when multiplied by a vector with the old coordinates and a unit gives a ne
 Here are some examples of how transformations are represented in matrix form:
 
 - Shift operation: shift  $x$  coordinate by  $5$ ,  $y$  coordinate by  $7$  and  $z$  coordinate by  $9$ .
-  
+ 
 ``` math
 \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 5 & 7 & 9 & 1 \end{pmatrix}
 ```
@@ -178,11 +178,11 @@ Here are some examples of how transformations are represented in matrix form:
 - Rotation operation: rotate  $\theta$  degrees around the  $x$  axis following the right-hand rule (counter-clockwise direction).
 
 ``` math
-\begin{pmatrix} 
+\begin{pmatrix}
 1 & 0 & 0 & 0 \\
 0 & \cos \theta & -\sin \theta & 0 \\
 0 & \sin \theta & \cos \theta & 0 \\
-0 & 0 & 0 & 1 
+0 & 0 & 0 & 1
 \end{pmatrix}
 ```
 
@@ -202,7 +202,7 @@ Now, once every transformation is described as a matrix, the sequence of transfo
 $a \cdot b \pmod m$  without using bignum arithmetics.
 
 **Solution:** We simply apply the binary construction algorithm described above, only performing additions instead of multiplications. In other words, we have "expanded" the multiplication of two numbers to  $O (\log m)$  operations of addition and multiplication by two (which, in essence, is an addition).
- 
+
 ``` math
 a \cdot b = \begin{cases} 0 &\text{if }a = 0 \\ 2 \cdot \frac{a}{2} \cdot b &\text{if }a > 0 \text{ and }a \text{ even} \\ 2 \cdot \frac{a-1}{2} \cdot b + b &\text{if }a > 0 \text{ and }a \text{ odd} \end{cases}
 ```
