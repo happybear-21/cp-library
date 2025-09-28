@@ -1,6 +1,7 @@
 {
     "title": "Modular Arithmetic",
     "pages": [
-        "modular-inverse"
+        "modular-inverse",
+        "linear-congruence-equation"
     ]
 }
