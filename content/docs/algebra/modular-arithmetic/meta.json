@@ -7,6 +7,7 @@
         "garners-algorithm",
         "factorial-modulo-p",
         "discrete-logarithm",
-        "primitive-root"
+        "primitive-root",
+        "discrete-root"
     ]
 }
