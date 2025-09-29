@@ -8,6 +8,7 @@
         "factorial-modulo-p",
         "discrete-logarithm",
         "primitive-root",
-        "discrete-root"
+        "discrete-root",
+        "montgomery-multiplication"
     ]
 }
