@@ -6,6 +6,7 @@
         "chinese-remainder-theorem",
         "garners-algorithm",
         "factorial-modulo-p",
-        "discrete-logarithm"
+        "discrete-logarithm",
+        "primitive-root"
     ]
 }
