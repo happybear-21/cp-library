@@ -5,6 +5,7 @@
         "linear-congruence-equation",
         "chinese-remainder-theorem",
         "garners-algorithm",
-        "factorial-modulo-p"
+        "factorial-modulo-p",
+        "discrete-logarithm"
     ]
 }
