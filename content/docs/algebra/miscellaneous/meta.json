@@ -1,6 +1,7 @@
 {
     "title": "Miscellaneous",
     "pages": [
-        "bit-manipulation"
+        "bit-manipulation",
+        "submask-enumeration"
     ]
 }
