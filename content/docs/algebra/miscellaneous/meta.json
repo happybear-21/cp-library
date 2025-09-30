@@ -2,6 +2,7 @@
     "title": "Miscellaneous",
     "pages": [
         "bit-manipulation",
-        "submask-enumeration"
+        "submask-enumeration",
+        "arbitrary-precision-arithmetic"
     ]
 }
