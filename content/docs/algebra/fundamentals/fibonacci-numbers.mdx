@@ -69,7 +69,7 @@ To decode a code word, first remove the final  $1$ . Then, if the  $i$ -
 
 ## Formulas for the  $n^{\text{th}}$  Fibonacci number
 
-#### Closed-form expression
+### Closed-form expression
 There is a formula known as "Binet's formula", even though it was already known by Moivre:
 ```math
 F_n = \frac{\left(\frac{1 + \sqrt{5}}{2}\right)^n - \left(\frac{1 - \sqrt{5}}{2}\right)^n}{\sqrt{5}}
@@ -83,7 +83,7 @@ F_n = \left[\frac{\left(\frac{1 + \sqrt{5}}{2}\right)^n}{\sqrt{5}}\right]
 where the square brackets denote rounding to the nearest integer.
 As these two formulas would require very high accuracy when working with fractional numbers, they are of little use in practical calculations.
 
-#### Fibonacci in Linear Time
+### Fibonacci in Linear Time
 
 The  $n$ -th Fibonacci number can be easily found in  $O(n)$  by computing the numbers one by one up to  $n$ . However, there are also faster ways, as we will see.
 
@@ -104,7 +104,7 @@ int fib(int n) {
 
 In this way, we obtain a linear solution,  $O(n)$  time, saving all the values prior to  $n$  in the sequence.
 
-#### Matrix Form
+### Matrix Form
 
 To go from  $(F_n, F_{n-1})$  to  $(F_{n+1}, F_n)$ , we can express the linear recurrence as a 2x2 matrix multiplication:
 
@@ -169,7 +169,7 @@ long long fib(int n) {
 }
 ```
 
-#### Fast Doubling Method
+### Fast Doubling Method
 By expanding the above matrix expression for  $n = 2\cdot k$ 
 
 ```math

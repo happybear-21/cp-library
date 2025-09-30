@@ -66,7 +66,7 @@ O(\sqrt {m} \log m).
 
 ## Implementation
 
-#### The Simplest Implementation
+### The Simplest Implementation
 In the following code, the function powmod calculates  $a^b \pmod m$  and the function solve produces a proper solution to the problem. It returns  $-1$  if there is no solution and returns one of the possible solutions otherwise.
 
 
@@ -111,7 +111,7 @@ Notice that our code assumes  $0^0 = 1$ , i.e. the code will compute  $0$�
 
 Another thing to note is that, if there are multiple arguments  $p$  that map to the same value of  $f_1$ , we only store one such argument. This works in this case because we only want to return one possible solution. If we need to return all possible solutions, we need to change $map<int, int>$ to, say, $map<int, vector<int>>$. We also need to change the second step accordingly.
 
-#### Improved Implementation
+### Improved Implementation
 A possible improvement is to get rid of binary exponentiation. This can be done by keeping a variable that is multiplied by  $a$  each time we increase  $q$  and a variable that is multiplied by  $a^n$  each time we increase  $p$ . With this change, the complexity of the algorithm is still the same, but now the  $\log$  factor is only for the map. Instead of a map, we can also use a hash table (unordered_map in C++) which has the average time complexity  $O(1)$  for inserting and searching.
 
 Problems often ask for the minimum  $x$  which satisfies the solution.

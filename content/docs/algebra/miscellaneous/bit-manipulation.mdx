@@ -34,7 +34,7 @@ CPUs are very fast manipulating those bits with specific operations. For some pr
 
 ## Bit Operators
 All those introduced operators are instant (same speed as an addition) on a CPU for fixed-length integers.
-#### Bitwise Operators
+### Bitwise Operators
 - $\&$  : The bitwise AND operator compares each bit of its first operand with the corresponding bit of its second operand. If both bits are 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0.
 - $|$  : The bitwise inclusive OR operator compares each bit of its first operand with the corresponding bit of its second operand. If one of the two bits is 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0.
 - $\wedge$  : The bitwise exclusive OR (XOR) operator compares each bit of its first operand with the corresponding bit of its second operand. If one bit is 0 and the other bit is 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0.
@@ -65,7 +65,7 @@ n         = 01011000
 ~n        = 10100111
 ```
 
-#### Shift Operators
+### Shift Operators
 There are two operators for shifting bits.
 - $\gg$  Shifts a number to the right by removing the last few binary digits of the number. Each shift by one represents an integer division by 2, so a right shift by  $k$  represents an integer division by  $2^k$ .
 E.g.  $5 \gg 2 = 101_2 \gg 2 = 1_2 = 1$  which is the same as  $\frac{5}{2^2} = \frac{5}{4} = 1$ . For a computer though shifting some bits is a lot faster than doing divisions.
@@ -76,13 +76,13 @@ Notice however that for a fixed-length integer that means dropping the most left
 
 ## Useful Tricks
 
-#### Set/flip/clear a bit
+### Set/flip/clear a bit
 Using bitwise shifts and some basic bitwise operations we can easily set, flip or clear a bit.  $1 \ll x$  is a number with only the  $x$ -th bit set, while  $\sim(1 \ll x)$  is a number with all bits set except the  $x$ -th bit.
 - $n ~|~ (1 \ll x)$  sets the  $x$ -th bit in the number  $n$ 
 - $n ~\wedge~ (1 \ll x)$  flips the  $x$ -th bit in the number  $n$ 
 - $n ~\&~ \sim(1 \ll x)$  clears the  $x$ -th bit in the number  $n$ 
 
-#### Check if a bit is set
+### Check if a bit is set
 The value of the  $x$ -th bit can be checked by shifting the number  $x$  positions to the right, so that the  $x$ -th bit is at the unit place, after which we can extract it by performing a bitwise & with 1.
 
 ```cpp
@@ -91,7 +91,7 @@ bool is_set(unsigned int number, int x) {
 }
 ```
 
-#### Check if the number is divisible by a power of 2
+### Check if the number is divisible by a power of 2
 Using the and operation, we can check if a number  $n$  is even because  $n ~\&~ 1 = 0$  if  $n$  is even, and  $n ~\&~ 1 = 1$  if  $n$  is odd. More generally,  $n$  is divisible by  $2^{k}$  exactly when  $n ~\&~ (2^{k} − 1) = 0$ .
 
 ```cpp
@@ -103,7 +103,7 @@ bool isDivisibleByPowerOf2(int n, int k) {
 
 We can calculate  $2^{k}$  by left shifting 1 by  $k$  positions. The trick works, because  $2^k - 1$  is a number that consists of exactly  $k$  ones. And a number that is divisible by  $2^k$  must have zero digits in those places.
 
-#### Check if an integer is a power of 2
+### Check if an integer is a power of 2
 A power of two is a number that has only a single bit in it (e.g.  $32 = 0010~0000_2$ ), while the predecessor of that number has that digit not set and all the digits after it set ( $31 = 0001~1111_2$ ). So the bitwise AND of a number with it's predecessor will always be 0, as they don't have any common digits set. You can easily check that this only happens for the the power of twos and for the number  $0$  which already has no digit set.
 
 ```cpp
@@ -112,7 +112,7 @@ bool isPowerOfTwo(unsigned int n) {
 }
 ```
 
-#### Clear the right-most set bit
+### Clear the right-most set bit
 The expression  $n ~\&~ (n-1)$  can be used to turn off the rightmost set bit of a number  $n$ . This works because the expression  $n-1$  flips all bits after the rightmost set bit of  $n$ , including the rightmost set bit. So all those digits are different from the original number, and by doing a bitwise AND they are all set to 0, giving you the original number  $n$  with the rightmost set bit flipped.
 
 For example, consider the number  $52 = 0011~0100_2$ :
@@ -123,7 +123,7 @@ n-1       = 00110011
 n & (n-1) = 00110000
 ```
 
-#### Brian Kernighan's algorithm
+### Brian Kernighan's algorithm
 We can count the number of bits set with the above expression.
 
 The idea is to consider only the set bits of an integer by turning off its rightmost set bit (after counting it), so the next iteration of the loop considers the Next Rightmost bit.
@@ -141,7 +141,7 @@ int countSetBits(int n)
 }
 ```
 
-#### Count set bits upto  $n$
+### Count set bits upto  $n$
 To count the number of set bits of all numbers upto the number  $n$  (inclusive), we can run the Brian Kernighan's algorithm on all numbers upto  $n$ . But this will result in a "Time Limit Exceeded" in contest submissions.
 
 We can use the fact that for numbers upto  $2^x$  (i.e. from  $1$  to  $2^x - 1$ ) there are  $x \cdot 2^{x-1}$  set bits. This can be visualised as follows.
@@ -178,14 +178,14 @@ int countSetBits(int n) {
 }
 ```
 
-#### Additional Tricks
+### Additional Tricks
 
 - $n ~\&~ (n + 1)$  clears all trailing ones:  $0011~0111_2 \rightarrow 0011~0000_2$ .
 - $n ~|~ (n + 1)$  sets the last cleared bit:  $0011~0101_2 \rightarrow 0011~0111_2$ .
 - $n ~\&~ -n$  extracts the last set bit:  $0011~0100_2 \rightarrow 0000~0100_2$ .
 Many more can be found in the book Hacker's Delight.
 
-#### Language and Compiler Support
+### Language and Compiler Support
 C++ supports some of those operations since C++20 via the bit standard library:
 
 - ```has_single_bit```: checks if the number is a power of two

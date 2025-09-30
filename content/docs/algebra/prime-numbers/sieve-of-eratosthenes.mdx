@@ -76,7 +76,7 @@ Besides, the consumed memory is a bottleneck for big  $n$ .
 
 The methods presented below allow us to reduce the quantity of the performed operations, as well as to shorten the consumed memory noticeably.
 
-#### Sieving till Root
+### Sieving till Root
 
 Obviously, to find all the prime numbers until  $n$ , it will be enough just to perform the sifting only by the prime numbers, which do not exceed the root of  $n$ .
 
@@ -94,12 +94,12 @@ for (int i = 2; i * i <= n; i++) {
 
 Such optimization doesn't affect the complexity (indeed, by repeating the proof presented above we'll get the evaluation  $n \ln \ln \sqrt n + o(n)$ , which is asymptotically the same according to the properties of logarithms), though the number of operations will reduce noticeably.
 
-#### Sieving by the Odd Numbers only
+### Sieving by the Odd Numbers only
 Since all even numbers (except  $2$ ) are composite, we can stop checking even numbers at all. Instead, we need to operate with odd numbers only.
 
 First, it will allow us to halve the needed memory. Second, it will reduce the number of operations performed by algorithm approximately in half.
 
-#### Memory Consumption and Speed of Operations
+### Memory Consumption and Speed of Operations
 We should notice, that these two implementations of the Sieve of Eratosthenes use  $n$  bits of memory by using the data structure ```vector<bool>```. ```vector<bool>``` is not a regular container that stores a series of bool (as in most computer architectures a bool takes one byte of memory). It's a memory-optimization specialization of ```vector<T>```, that only consumes  $\frac{N}{8}$  bytes of memory.
 
 Modern processors architectures work much more efficiently with bytes than with bits as they usually cannot access bits directly. So underneath the ```vector<bool>``` stores the bits in a large continuous memory, accesses the memory in blocks of a few bytes, and extracts/sets the bits with bit operations like bit masking and bit shifting.
@@ -110,7 +110,7 @@ However, for the simple implementations of the Sieve of Eratosthenes using a ```
 
 The same considerations also apply to bitset. It's also an efficient way of storing bits, similar to ```vector<bool>```, so it takes only  $\frac{N}{8}$  bytes of memory, but is a bit slower in accessing the elements. In the benchmark above bitset performs a bit worse than ```vector<bool>```. Another drawback from bitset is that you need to know the size at compile time.
 
-#### Segmented Sieve
+### Segmented Sieve
 
 It follows from the optimization "sieving till root" that there is no need to keep the whole array is_prime[1...n] at all times. For sieving it is enough to just keep the prime numbers until the root of  $n$ , i.e. prime[1... sqrt(n)], split the complete range into blocks, and sieve each block separately.
 

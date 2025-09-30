@@ -3,6 +3,7 @@
     "pages": [
         "bit-manipulation",
         "submask-enumeration",
-        "arbitrary-precision-arithmetic"
+        "arbitrary-precision-arithmetic",
+        "fast-fourier-transform"
     ]
 }

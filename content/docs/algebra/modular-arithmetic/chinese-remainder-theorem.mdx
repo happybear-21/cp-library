@@ -18,7 +18,7 @@ E.g. the system of congruences
 
 has the solution  $23$  modulo  $105$ , because  $23 \bmod{3} = 2$ ,  $23 \bmod{5} = 3$ , and  $23 \bmod{7} = 2$ . We can write down every solution as  $23 + 105\cdot k$  for  $k \in \mathbb{Z}$ .
 
-#### Corollary
+### Corollary
 A consequence of the CRT is that the equation 
 ```math
 x \equiv a \pmod{m}
@@ -60,10 +60,10 @@ Lets assume that you have two different solutions  $x$  and  $y$ . Becau
 
 ## Solution for General Case
 
-#### Inductive Solution
+### Inductive Solution
 As  $m_1 m_2$  is coprime to  $m_3$ , we can inductively repeatedly apply the solution for two moduli for any number of moduli. First you compute  $b_2 := a \pmod{m_1 m_2}$  using the first two congruences, then you can compute  $b_3 := a \pmod{m_1 m_2 m_3}$  using the congruences  $a \equiv b_2 \pmod{m_1 m_2}$  and  $a \equiv a_3 \pmod {m_3}$ , etc.
 
-#### Direct Construction
+### Direct Construction
 A direct construction similar to Lagrange interpolation is possible.
 
 Let  $M_i := \prod_{i \neq j} m_j$ , the product of all moduli but  $m_i$ , and  $N_i$  the modular inverses  $N_i := M_i^{-1} \bmod{m_i}$ . Then a solution to the system of congruences is:
@@ -76,7 +76,7 @@ We can check this is indeed a solution, by computing  $a \bmod{m_i}$  for al
 \begin{array}{rcll} a & \equiv & \sum_{j=1}^k a_j M_j N_j & \pmod{m_i} \\ & \equiv & a_i M_i N_i & \pmod{m_i} \\ & \equiv & a_i M_i M_i^{-1} & \pmod{m_i} \\ & \equiv & a_i & \pmod{m_i} \end{array}
 ```
 
-#### Implementation
+### Implementation
 
 ```cpp
 struct Congruence {

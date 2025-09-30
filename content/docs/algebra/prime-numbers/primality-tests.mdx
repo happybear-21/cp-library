@@ -141,7 +141,7 @@ bool MillerRabin(u64 n, int iter=5) { // returns true if n is probably prime, el
 
 Before the Miller-Rabin test you can test additionally if one of the first few prime numbers is a divisor. This can speed up the test by a lot, since most composite numbers have very small prime divisors. E.g.  $88\%$  of all numbers have a prime factor smaller than  $100$ .
 
-#### Deterministic Version
+### Deterministic Version
 Miller showed that it is possible to make the algorithm deterministic by only checking all bases  $\le O((\ln n)^2)$ . Bach later gave a concrete bound, it is only necessary to test all bases  $a \le 2 \ln(n)^2$ .
 
 This is still a pretty large number of bases. So people have invested quite a lot of computation power into finding lower bounds. It turns out, for testing a 32 bit integer it is only necessary to check the first 4 prime bases: 2, 3, 5 and 7. The smallest composite number that fails this test is  $3,215,031,751 = 151 \cdot 751 \cdot 28351$ . And for testing 64 bit integer it is enough to check the first 12 prime bases: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, and 37.

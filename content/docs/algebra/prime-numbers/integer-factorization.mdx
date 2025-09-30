@@ -29,7 +29,7 @@ vector<long long> trial_division1(long long n) {
 }
 ```
 
-#### Wheel Factorization
+### Wheel Factorization
 This is an optimization of the trial division. Once we know that the number is not divisible by 2, we don't need to check other even numbers. This leaves us with only  $50\%$  of the numbers to check. After factoring out 2, and getting an odd number, we can simply start with 3 and only count other odd numbers.
 
 ```cpp
@@ -82,7 +82,7 @@ vector<long long> trial_division3(long long n) {
 
 If we continue exending this method to include even more primes, better percentages can be reached, but the skip lists will become larger.
 
-#### Precomputed Primes
+### Precomputed Primes
 Extending the wheel factorization method indefinitely, we will only be left with prime numbers to check. A good way of checking this is to precompute all prime numbers with the Sieve of Eratosthenes until  $\sqrt{n}$ , and test them individually.
 
 ```cpp
@@ -207,7 +207,7 @@ Therefore, if we find two indices  $s$  and  $t$  with  $g = \gcd(x_s 
 
 To find the cycle, we can use any common cycle detection algorithm.
 
-#### Floyd's Cycle-Finding Algorithm
+### Floyd's Cycle-Finding Algorithm
 This algorithm finds a cycle by using two pointers moving over the sequence at differing speeds. During each iteration, the first pointer will advance one element over, while the second pointer advances to every other element. Using this idea it is easy to observe that if there is a cycle, at some point the second pointer will come around to meet the first one during the loops. If the cycle length is  $\lambda$  and the  $\mu$  is the first index at which the cycle starts, then the algorithm will run in  $O(\lambda + \mu)$  time.
 
 This algorithm is also known as the Tortoise and Hare algorithm, based on the tale in which a tortoise (the slow pointer) and a hare (the faster pointer) have a race.
@@ -273,7 +273,7 @@ Alternatively you can also implement the Montgomery multiplication.
 
 As stated previously, if  $n$  is composite and the algorithm returns  $n$  as factor, you have to repeat the procedure with different parameters  $x_0$  and  $c$ . E.g. the choice  $x_0 = c = 1$  will not factor  $25 = 5 \cdot 5$ . The algorithm will return  $25$ . However, the choice  $x_0 = 1$ ,  $c = 2$  will factor it.
 
-#### Brent's Algorithm
+### Brent's Algorithm
 Brent implements a similar method to Floyd, using two pointers. The difference being that instead of advancing the pointers by one and two places respectively, they are advanced by powers of two. As soon as  $2^i$  is greater than  $\lambda$  and  $\mu$ , we will find the cycle.
 
 ```cpp
