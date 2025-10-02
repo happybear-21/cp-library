@@ -742,12 +742,12 @@ Let  $\vec r_k = (q_k;p_k)$  for the convergent  $r_k = \frac{p_k}{q_k}$�
 
 Let  $\vec r = (1;r)$ . Then, each vector  $(x;y)$  corresponds to the number that is equal to its slope coefficient  $\frac{y}{x}$ .
 
-With the notion of pseudoscalar product  $(x_1;y_1) \times (x_2;y_2) = x_1 y_2 - x_2 y_1$ , it can be shown (see the explanation below) that 
+With the notion of pseudoscalar product  $(x_1;y_1) \times (x_2;y_2) = x_1 y_2 - x_2 y_1$ , it can be shown (see the explanation below) that
 ```math
 s_k = -\frac{\vec r_{k-2} \times \vec r}{\vec r_{k-1} \times \vec r} = \left|\frac{\vec r_{k-2} \times \vec r}{\vec r_{k-1} \times \vec r}\right|.
 ```
 
-The last equation is due to the fact that  $r_{k-1}$  and  $r_{k-2}$  lie on the different sides of  $r$ , thus pseudoscalar products of  $\vec r_{k-1}$  and  $\vec r_{k-2}$  with  $\vec r$  have distinct signs. With  $a_k = \lfloor s_k \rfloor$  in mind, formula for  $\vec r_k$  now looks like 
+The last equation is due to the fact that  $r_{k-1}$  and  $r_{k-2}$  lie on the different sides of  $r$ , thus pseudoscalar products of  $\vec r_{k-1}$  and  $\vec r_{k-2}$  with  $\vec r$  have distinct signs. With  $a_k = \lfloor s_k \rfloor$  in mind, formula for  $\vec r_k$  now looks like
 ```math
 \vec r_k = \vec r_{k-2} + \left\lfloor \left| \frac{\vec r \times \vec r_{k-2}}{\vec r \times \vec r_{k-1}}\right|\right\rfloor \vec r_{k-1}.
 ```
@@ -758,7 +758,7 @@ a_k = \left\lfloor \left| \frac{q_{k-1}r-p_{k-1}}{q_{k-2}r-p_{k-2}} \right| \rig
 ```
 
 <Callout title="Explanation" type="info">
-As we have already noted,  $a_k = \lfloor s_k \rfloor$ , where  $s_k = [a_k; a_{k+1}, a_{k+2}, \dots]$ . On the other hand, from the convergent recurrence we derive that 
+As we have already noted,  $a_k = \lfloor s_k \rfloor$ , where  $s_k = [a_k; a_{k+1}, a_{k+2}, \dots]$ . On the other hand, from the convergent recurrence we derive that
 ```math
 r = [a_0; a_1, \dots, a_{k-1}, s_k] = \frac{s_k p_{k-1} + p_{k-2}}{s_k q_{k-1} + q_{k-2}}.
 ```
@@ -1038,7 +1038,7 @@ Since  $m$  is constant, we can divide by it and further restate it as find 
 
 In terms of continued fractions it means that  $\frac{k}{q}$  is the best diophantine approximation to  $\frac{r}{m}$  and it is sufficient to only check lower semiconvergents of  $\frac{r}{m}$ .
 ```python
-# find Q that minimizes Q*r mod m for 1 <= k <= n < m 
+# find Q that minimizes Q*r mod m for 1 <= k <= n < m
 def mod_min(r, n, m):
     a = fraction(r, m)
     p, q = convergents(a)

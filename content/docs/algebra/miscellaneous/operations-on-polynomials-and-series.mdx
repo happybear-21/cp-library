@@ -21,7 +21,7 @@ Typical example of such field is the field of remainders modulo prime number  
 For simplicity we will drop the term univariate, as this is the only kind of polynomials we consider in this article. We will also write  $A$  instead of  $A(x)$  wherever possible, which will be understandable from the context. It is assumed that either  $a_n \neq 0$  or  $A(x)=0$ .
 
 <Callout title="Definition" type="info">
-The product of two polynomials is defined by expanding it as an arithmetic expression: 
+The product of two polynomials is defined by expanding it as an arithmetic expression:
 ```math
 A(x) B(x) = \left(\sum\limits_{i=0}^n a_i x^i \right)\left(\sum\limits_{j=0}^m b_j x^j\right) = \sum\limits_{i,j} a_i b_j x^{i+j} = \sum\limits_{k=0}^{n+m} c_k x^k = C(x).
 ```
@@ -76,7 +76,7 @@ A formal power series is an infinite sum  $A(x) = a_0 + a_1 x + a_2 x^2 + \dot
 In other words, when we consider e.g. a sum  $1+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\dots=2$ , we imply that it converges to  $2$  when the number of summands approach infinity. However, formal series are only considered in terms of sequences that make them.
 
 <Callout title="Definition" type="info">
-The product of formal power series  $A(x)$  and  $B(x)$ , is also defined by expanding it as an arithmetic expression: 
+The product of formal power series  $A(x)$  and  $B(x)$ , is also defined by expanding it as an arithmetic expression:
 ```math
 A(x) B(x) = \left(\sum\limits_{i=0}^\infty a_i x^i \right)\left(\sum\limits_{j=0}^\infty b_j x^j\right) = \sum\limits_{i,j} a_i b_j x^{i+j} = \sum\limits_{k=0}^{\infty} c_k x^k = C(x),
 ```
@@ -219,7 +219,7 @@ $$A(x) = B(x) D(x) + R(x), \deg R < \deg B.$$ 
 
 Let  $n \geq m$ , it would imply that  $\deg D = n - m$  and the leading  $n-m+1$  coefficients of  $A$  don't influence  $R$ . It means that you can recover  $D(x)$  from the largest  $n-m+1$  coefficients of  $A(x)$  and  $B(x)$  if you consider it as a system of equations.
 
-The system of linear equations we're talking about can be written in the following form: 
+The system of linear equations we're talking about can be written in the following form:
 ```math
 \begin{bmatrix} a_n \\ \vdots \\ a_{m+1} \\ a_{m} \end{bmatrix} = \begin{bmatrix} b_m & \dots & 0 & 0 \\ \vdots & \ddots & \vdots & \vdots \\ \dots & \dots & b_m & 0 \\ \dots & \dots & b_{m-1} & b_m \end{bmatrix} \begin{bmatrix}d_{n-m} \\ \vdots \\ d_1 \\ d_0\end{bmatrix}
 ```
@@ -248,7 +248,7 @@ Note that the matrix above is a so-called triangular Toeplitz matrix and, as we 
 ## Calculating Functions of Polynomial
 
 ### Newton's Method
-Let's generalize the Sieveking–Kung algorithm. Consider equation  $F(P) = 0$  where  $P(x)$  should be a polynomial and  $F(x)$  is some polynomial-valued function defined as 
+Let's generalize the Sieveking–Kung algorithm. Consider equation  $F(P) = 0$  where  $P(x)$  should be a polynomial and  $F(x)$  is some polynomial-valued function defined as
 ```math
 F(x) = \sum\limits_{i=0}^\infty \alpha_i (x-\beta)^i,
 ```
@@ -258,7 +258,7 @@ where  $\beta$  is some constant. It can be proven that if we introduce a ne
 F(x) = F(y) + (x-y)F'(y) + (x-y)^2 G(x,y),
 ```
 
-where  $F'(x)$  is the derivative formal power series defined as 
+where  $F'(x)$  is the derivative formal power series defined as
 ```math
 F'(x) = \sum\limits_{i=0}^\infty (i+1)\alpha_{i+1}(x-\beta)^i,
 ```
@@ -277,7 +277,7 @@ Since  $Q_{k+1} - Q_k \equiv 0 \pmod{x^a}$ , it also holds that  $(Q_{k+1}
 0 \equiv F(Q_{k+1}) \equiv F(Q_k) + (Q_{k+1} - Q_k) F'(Q_k) \pmod{x^{2a}}.
 ```
 
-The last formula gives us the value of  $Q_{k+1}$ : 
+The last formula gives us the value of  $Q_{k+1}$ :
 ```math
 \boxed{Q_{k+1} = Q_k - \dfrac{F(Q_k)}{F'(Q_k)} \pmod{x^{2a}}}
 ```
@@ -297,7 +297,7 @@ As was mentioned earlier, formally and generically this result is known as Hense
 Another example where Hensel's lifting might be helpful are so-called p-adic numbers where we, in fact, work with the sequence of integer remainders modulo  $p$ ,  $p^2$ ,  $p^3$  and so on. For example, Newton's method can be used to find all possible automorphic numbers (numbers that end on itself when squared) with a given number base. The problem is left as an exercise to the reader. You might consider this problem to check if your solution works for  $10$ -based numbers.
 
 ### Logarithm
-For the function  $\ln P(x)$  it's known that: 
+For the function  $\ln P(x)$  it's known that:
 ```math
 \boxed{(\ln P(x))' = \dfrac{P'(x)}{P(x)}}
 ```
@@ -367,7 +367,7 @@ Now if you need to evaluate a polynomial in the points  $x_r = z^{2r+1}$  yo
 
 It gives us an  $O(n \log n)$  algorithm when you need to compute values in powers of  $z$ , thus you may compute the DFT for non-powers of two.
 
-Another observation is that  $kr = \binom{k+r}{2} - \binom{k}{2} - \binom{r}{2}$ . Then we have 
+Another observation is that  $kr = \binom{k+r}{2} - \binom{k}{2} - \binom{r}{2}$ . Then we have
 ```math
 \boxed{A(z^r) = z^{-\binom{r}{2}}\sum\limits_{k=0}^n \left(a_k z^{-\binom{k}{2}}\right)z^{\binom{k+r}{2}}}
 ```
@@ -382,14 +382,14 @@ Assume you need to calculate  $A(x_1), \dots, A(x_n)$ . As mentioned earlier
 - Concatenate the results from the first and second recursive call and return them.The whole procedure will run in  $O(n \log^2 n)$ .
 
 ### Interpolation
-There's a direct formula by Lagrange to interpolate a polynomial, given set of pairs  $(x_i, y_i)$ : 
+There's a direct formula by Lagrange to interpolate a polynomial, given set of pairs  $(x_i, y_i)$ :
 ```math
 \boxed{A(x) = \sum\limits_{i=1}^n y_i \prod\limits_{j \neq i}\dfrac{x-x_j}{x_i - x_j}}
 ```
 
 Computing it directly is a hard thing but turns out, we may compute it in  $O(n \log^2 n)$  with a divide and conquer approach:
 
-Consider  $P(x) = (x-x_1)\dots(x-x_n)$ . To know the coefficients of the denominators in  $A(x)$  we should compute products like: 
+Consider  $P(x) = (x-x_1)\dots(x-x_n)$ . To know the coefficients of the denominators in  $A(x)$  we should compute products like:
 ```math
 P_i = \prod\limits_{j \neq i} (x_i-x_j)
 ```
