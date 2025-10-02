@@ -6,6 +6,7 @@
         "arbitrary-precision-arithmetic",
         "fast-fourier-transform",
         "operations-on-polynomials-and-series",
-        "continued-fractions"
+        "continued-fractions",
+        "factoring-exponentiation"
     ]
 }
