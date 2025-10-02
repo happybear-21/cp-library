@@ -6,7 +6,7 @@ const withMDX = createMDX();
 const config = {
   reactStrictMode: true,
   images: {
-    domains: ['cp-algorithms.com'],
+    domains: ['cp-algorithms.com', "upload.wikimedia.org"],
   },
 };
 

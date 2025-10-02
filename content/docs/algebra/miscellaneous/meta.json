@@ -5,6 +5,7 @@
         "submask-enumeration",
         "arbitrary-precision-arithmetic",
         "fast-fourier-transform",
-        "operations-on-polynomials-and-series"
+        "operations-on-polynomials-and-series",
+        "continued-fractions"
     ]
 }
